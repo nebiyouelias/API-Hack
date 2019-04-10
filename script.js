@@ -76,14 +76,14 @@ function displayFilmResults(responseJson) {
     $('#results-list').append(
       `     
            
-     <li>
+     <div class='filmResults'>
       <img  src='${tumbImage}/${responseJson.results[i].poster_path}'>
       <p class='lang'>${responseJson.results[i].original_language}</p>
       <h3 class='overview'>${responseJson.results[i].overview}</h3>
       <p class='avg'>${responseJson.results[i].vote_average}</p>
       <p class='date'>${responseJson.results[i].release_date}</p>
        
-    </li>`
+    </div>`
     )};
 }
 
