@@ -15,15 +15,18 @@ function displayTvShows(responseJson) {
     $('#results-list').append(
       `     
          
-     <li class='tvList'>
+     <div class= 'content col-3'>
       <img src='${tumbImage}/${responseJson.results[i].poster_path}'>
-      <p>${responseJson.results[i].original_name}</p>
-      <h3>${responseJson.results[i].vote_count}</h3>
-      <p>${responseJson.results[i].vote_average}</p>
-      <p>${responseJson.results[i].first_air_date}</p>
-      <p>${responseJson.results[i].overview}</p>
-       
-    </li>`
+      
+      <div class='description'>
+      <h2>${responseJson.results[i].original_name}</h2>
+          
+      <h3>${responseJson.results[i].overview}</h3>
+      <p>Score ${responseJson.results[i].vote_average}</p>
+      <p> First Air Date ${responseJson.results[i].first_air_date}</p>
+       </div>
+    </div>`
+
     )};
 }
 
@@ -32,39 +35,9 @@ function displayTvShows(responseJson) {
     
   $('#results').removeClass('hidden');
 
-function displayPersonResults(responseJson) {
-  
-   const listArray= responseJson.results.flatMap(x => x.known_for); 
-   
-  $('#results-list').empty();
-  
-  
-    for (let i= 0;  i < responseJson.results.length; i++){
-    
-    $('#results-list').append(
-      `     
-           
-     <div class='person'>
-      <h1 class='personName'>${responseJson.results[i].name}
-      <img class= 'Personimage' src='${tumbImage}/${responseJson.results[i].profile_path}'>
-    <ul class='list'>Known For
-    ${responseJson.results[i].known_for.map(x => {
-      return `<img class='personMovies'
-                  src='${tumbImage}/${x.poster_path}'>
-    <li class='title'>${x.title}</li>
-    <li>${x.overview}</li>
-    <li>${x.release_date}</li>
-    
-    </div>`
-    
-    }).join('')}
-    
-        </ul>`
-    
-    )};
-  }
-    
-  $('#results').removeClass('hidden');
+
+
+
 function displayFilmResults(responseJson) {
   
    
@@ -76,36 +49,26 @@ function displayFilmResults(responseJson) {
     $('#results-list').append(
       `     
            
-     <div class='filmResults'>
-      <img  src='${tumbImage}/${responseJson.results[i].poster_path}'>
-      <p class='lang'>${responseJson.results[i].original_language}</p>
-      <h3 class='overview'>${responseJson.results[i].overview}</h3>
-      <p class='avg'>${responseJson.results[i].vote_average}</p>
-      <p class='date'>${responseJson.results[i].release_date}</p>
+     <div class='content col-3'>
+      <img class='filmImage'  src='${tumbImage}/${responseJson.results[i].poster_path}'>
+     <div class='description'> 
+     <h3 class='overview'>${responseJson.results[i].overview}</h3>
+        
+      <p class='avg'>Vote Avergae =${responseJson.results[i].vote_average}</p>
+            <p class='date'>Orginal Relase Date= ${responseJson.results[i].release_date}</p>
+
+            
+            
+      </div>
        
     </div>`
     )};
 }
 
-function getPersonInfo(person) {
-  
-  const personUrl = `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${person}&include_adult=false`;
-   
-   console.log(personUrl);
- 
-    fetch(personUrl)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then(responseJson => displayPersonResults(responseJson))
-    .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
-    });
-}
 
+
+
+  
 function getFilmInfo(movies) {
   
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movies}&include_adult=false`;
@@ -121,6 +84,8 @@ fetch(url)
       throw new Error(response.statusText);
     })
     .then(responseJson => displayFilmResults(responseJson))
+    
+    
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
@@ -157,14 +122,16 @@ function watchForm() {
     const options= $('.list').val()
     if (options=='Movies') {
       getFilmInfo(searchTerm);
+
     } 
-    else if (options=='people'){
-      getPersonInfo(searchTerm);
-    }
+    
     else if (options =='Tv Show'){
       getTvShow(searchTerm);
     }
-   
+   else {
+     return 
+     `Please Select A catagory`
+   }
   });
 }
 

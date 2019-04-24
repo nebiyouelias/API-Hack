@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./float.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   </head>
   <body>
-     <div class="container">
+     <div class="container col-12">
         <h1>Search for Movies, TV Shows,People...</h1>
 
         <form id="js-form">
           <select class="list">
             <option class='movies' value='Movies'>Movies</option>
-            <option class='people' value='people'>People</option>
             <option class ='tv' value'TvShow'>Tv Show</option>
         </select>
             <label for="search-movie"></label>
@@ -22,14 +22,29 @@
             <input type="submit" value="Go!">
             
         </form>
-
+        
         <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
+        </div>
+        <section id="results" class="hidden" class="col-3">
           <h2>Search results</h2>
-          <div id="results-list">
+          <div id="results-list" class='col-3'>
           </div>
         </section>
-    </div>
+    <div class="wrapper">
+        <div class="consensus tight">
+          <div class="outer_ring">
+            <div class="user_score_chart 4bc88f84017a3c122d008c2d" data-percent="79.0" data-track-color="#204529" data-bar-color="#21d07a">
+              <div class="percent">
+                
+                  <span class="icon icon-r79"></span>
+                
+              </div>
+            <canvas height="32" width="32"></canvas></div>
+          </div>
+        </div>
+
+        
+      </div>
         <script src="script.js"></script>
   </body>
 </html>
