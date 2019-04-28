@@ -6,16 +6,17 @@
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./float.css" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans+Condensed:300|Playfair+Display" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   </head>
-  <body>
-     <div class="container col-12">
-        <h1>Search for Movies, TV Shows,People...</h1>
+  <body class='bg col-12'>
+     <div class="container col-12" >
+        <h1>Search Synopsis Of a Movie or TV Show </h1>
 
         <form id="js-form">
           <select class="list">
             <option class='movies' value='Movies'>Movies</option>
-            <option class ='tv' value'TvShow'>Tv Show</option>
+            <option class ='tv' value='Tv Show'>Tv Show</option>
         </select>
             <label for="search-movie"></label>
             <input type="text" name="search-term" id="js-search-term" required>
@@ -25,22 +26,13 @@
         
         <p id="js-error-message" class="error-message"></p>
         </div>
+        
         <section id="results" class="hidden" class="col-3">
           <h2>Search results</h2>
           <div id="results-list" class='col-3'>
-          </div>
+         
         </section>
-    <div class="wrapper">
-        <div class="consensus tight">
-          <div class="outer_ring">
-            <div class="user_score_chart 4bc88f84017a3c122d008c2d" data-percent="79.0" data-track-color="#204529" data-bar-color="#21d07a">
-              <div class="percent">
-                
-                  <span class="icon icon-r79"></span>
-                
-              </div>
-            <canvas height="32" width="32"></canvas></div>
-          </div>
+    
         </div>
 
         

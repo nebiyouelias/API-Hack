@@ -6,10 +6,11 @@ const tumbImage= 'https://image.tmdb.org/t/p/w600_and_h900_bestv2'
  
 function displayTvShows(responseJson) {
   
-   
+  
+  
+  $('#results').removeClass('hidden');
   $('#results-list').empty();
-  
-  
+
     for (let i= 0; i < responseJson.results.length; i++){
       console.log(responseJson.results[i]);
     $('#results-list').append(
@@ -31,16 +32,10 @@ function displayTvShows(responseJson) {
 }
 
 
-
-    
-  $('#results').removeClass('hidden');
-
-
-
-
 function displayFilmResults(responseJson) {
   
-   
+  $('#results').removeClass('hidden');
+  
   $('#results-list').empty();
   
   
@@ -64,6 +59,13 @@ function displayFilmResults(responseJson) {
     </div>`
     )};
 }
+
+    
+  
+
+
+
+
 
 
 
