@@ -14,8 +14,8 @@ Film Results with Synopsis Description.
 Learn2Pitch provides you a quick and short description of film's Synopsis. See how your favourite Film and Tv shows were Pitched.
 
 ### Built With 
-    *HTML
-    *CSS
-    *JS 
+    HTML
+    CSS
+    JS 
 ## Author 
 Nebiyou E Shiferaw
