@@ -10,5 +10,12 @@ Home Page
 Film Results with Synopsis Description. 
 ![](screenshots/Screenshot-2019-05-01_22.49.07.png) 
 
-### Summary 
+## Summary 
 Learn2Pitch provides you a quick and short description of film's Synopsis. See how your favourite Film and Tv shows were Pitched.
+
+### Built With 
+    *HTML
+    *CSS
+    *JS 
+## Author 
+Nebiyou E Shiferaw
