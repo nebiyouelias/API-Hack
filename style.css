@@ -1,6 +1,7 @@
 body, html{  
   height:100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
+  ;
   
   }
   .bg{
@@ -26,7 +27,7 @@ body, html{
  .content{
    
    padding-bottom:20px;
-   background-color: rgba(0, 0, 0, 0.4);
+   background-color: rgba(0, 0, 0, 0.7);
    padding-top: 30px;
    
    
@@ -58,9 +59,16 @@ body, html{
  }
  h1, #js-form{
    text-align: center;
-
+   
  }
- 
+
+ h1{
+   padding-bottom: 
+ }
+ .Ftitle { 
+   text-align: left;
+   color: aqua;
+ }
  .container{
    padding-top: 100px;
    padding-bottom: 50px;
@@ -72,7 +80,36 @@ body, html{
 h2{
   
   text-align: center;
-  
-  
-}
- 
+  margin:0;
+  font-size: xx-large;
+  font-family:Arial, Helvetica, sans-serif;
+  color: aqua;
+  }
+  .overview{
+    font-family: 'Courier New', Courier, monospace;
+  } 
+  .avg, .date{
+    color:aqua;
+    font: bolder;
+  }
+  .num, .dateR{
+    color:white;
+    font-size: x-large
+  } 
+  .list,#js-search-term,.Go{
+    width: 150px;
+    height: 30px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.7);
+  } 
+  .Go{
+    background-color: aqua;
+    
+  }
+  .Go:hover{
+    background-color: cadetblue;
+  } 
+  .h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: wheat;
+   
+  }

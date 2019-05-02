@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -11,32 +11,35 @@
   </head>
   <body class='bg col-12'>
      <div class="container col-12" >
-        <h1>Search Synopsis Of a Movie or TV Show </h1>
-
-        <form id="js-form">
+       <header role="banner">
+        <h1>Find Synopsis's of your favourite Movie and TV Show</h1>
+      </header>
+      <main role="main">
+        <form id="js-form" role="form">
           <select class="list">
             <option class='movies' value='Movies'>Movies</option>
             <option class ='tv' value='Tv Show'>Tv Show</option>
-        </select>
+          </select>
             <label for="search-movie"></label>
             <input type="text" name="search-term" id="js-search-term" required>
-            <input type="submit" value="Go!">
+            <input type="submit" class='Go' value="Go!">
             
         </form>
+          <p id="js-error-message" class="error-message"></p>
+         
+            
+      </div>
         
-        <p id="js-error-message" class="error-message"></p>
-        </div>
-        
-        <section id="results" class="hidden" class="col-3">
+        <section id="results" class='hidden' class="col-3" role="region">
           <h2>Search results</h2>
           <div id="results-list" class='col-3'>
-         
         </section>
     
-        </div>
+      </main>
+
 
         
-      </div>
+      
         <script src="script.js"></script>
   </body>
 </html>
